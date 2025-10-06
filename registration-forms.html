@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Competition Registration Forms - BVV Sangha Screening</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <style>
+        .form-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: white;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+        }
+        .form-header {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding: 2rem;
+            background: var(--gradient-primary);
+            color: white;
+            border-radius: 15px;
+        }
+        .form-navigation {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+        .form-nav-btn {
+            padding: 0.75rem 1.5rem;
+            background: var(--bg-light);
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        .form-nav-btn:hover,
+        .form-nav-btn.active {
+            background: var(--primary-color);
+            color: white;
+        }
+        .form-section {
+            display: none;
+        }
+        .form-section.active {
+            display: block;
+        }
+        .form-instructions {
+            background: var(--bg-light);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+        }
+        .form-instructions h3 {
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+        .form-instructions ul {
+            list-style: none;
+            padding: 0;
+        }
+        .form-instructions li {
+            padding: 0.5rem 0;
+            color: var(--text-secondary);
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        .form-instructions li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2><a href="index.html" style="text-decoration: none; color: inherit;">BVV Sangha Screening</a></h2>
+            </div>
+            <div class="nav-links">
+                <a href="index.html#home">Home</a>
+                <a href="index.html#competitions">Competitions</a>
+                <a href="#" class="active">Register</a>
+                <a href="index.html#schedule">Schedule</a>
+                <a href="index.html#results">Results</a>
+            </div>
+        </div>
+    </nav>
+
+    <div style="padding-top: 100px;">
+        <div class="form-container">
+            <div class="form-header">
+                <h1>Competition Registration Forms</h1>
+                <p>Select your competition category to register</p>
+            </div>
+
+            <div class="form-navigation">
+                <button class="form-nav-btn active" onclick="showForm('dance')">Dance</button>
+                <button class="form-nav-btn" onclick="showForm('singing')">Singing</button>
+                <button class="form-nav-btn" onclick="showForm('drawing')">Drawing</button>
+                <button class="form-nav-btn" onclick="showForm('skit')">Skit</button>
+                <button class="form-nav-btn" onclick="showForm('essay')">Essay</button>
+                <button class="form-nav-btn" onclick="showForm('quiz')">Quiz</button>
+                <button class="form-nav-btn" onclick="showForm('kannada-song')">Kavana Vaachana</button>
+            </div>
+
+            <!-- Dance Competition Form -->
+            <div id="dance-form" class="form-section active">
+                <div class="form-instructions">
+                    <h3><i class="fas fa-music"></i> Dance Competition Registration</h3>
+                    <ul>
+                        <li>Categories: Classical, Semi-classical, Folk</li>
+                        <li>Format: Solo (3-5 min) | Group (5-8 min)</li>
+                        <li>Bring your own music on USB/CD</li>
+                        <li>Traditional costumes recommended</li>
+                        <li>Props allowed (simple ones)</li>
+                    </ul>
+                </div>
+                <iframe 
+                    src="https://docs.google.com/forms/d/e/1FAIpQLSeeMamiqUv2MbbWSbQd5zV_tAwH1k4r2fPW7EkGnv-oIEoPwQ/viewform?embedded=true" 
+                    width="100%" 
+                    height="600" 
+                    frameborder="0" 
+                    marginheight="0" 
+                    marginwidth="0">
+                    Loading Dance Registration Form...
+                </iframe>
+            </div>
+
+            <!-- Singing Competition Form -->
+            <div id="singing-form" class="form-section">
+                <div class="form-instructions">
+                    <h3><i class="fas fa-microphone"></i> Singing Competition Registration</h3>
+                    <ul>
+                        <li>Categories: Bhavageethe, Janapada, Classical, Semi-classical</li>
+                        <li>Format: Solo (3-5 min) | Group (5-8 min)</li>
+                        <li>Karaoke tracks preferred</li>
+                        <li>No film songs allowed</li>
+                        <li>Submit lyrics sheet</li>
+                    </ul>
+                </div>
+                <iframe 
+                    src="https://docs.google.com/forms/d/e/1FAIpQLSeeMamiqUv2MbbWSbQd5zV_tAwH1k4r2fPW7EkGnv-oIEoPwQ/viewform?embedded=true" 
+                    width="100%" 
+                    height="600" 
+                    frameborder="0" 
+                    marginheight="0" 
+                    marginwidth="0">
+                    Loading Singing Registration Form...
+                </iframe>
+            </div>
+
+            <!-- Drawing Competition Form -->
+            <div id="drawing-form" class="form-section">
+                <div class="form-instructions">
+                    <h3><i class="fas fa-palette"></i> Drawing Competition Registration</h3>
+                    <ul>
+                        <li>Portfolio submission required</li>
+                        <li>Submit 3-5 best works</li>
+                        <li>Digital: High resolution JPG/PNG</li>
+                        <li>Physical: A3 size maximum</li>
+                        <li>Themes: Realistic, Abstract, Cultural</li>
+                    </ul>
+                </div>
+                <iframe 
+                    src="https://docs.google.com/forms/d/e/1FAIpQLSeeMamiqUv2MbbWSbQd5zV_tAwH1k4r2fPW7EkGnv-oIEoPwQ/viewform?embedded=true" 
+                    width="100%" 
+                    height="600" 
+                    frameborder="0" 
+                    marginheight="0" 
+                    marginwidth="0">
+                    Loading Drawing Registration Form...
+                </iframe>
+            </div>
+
+            <!-- Skit Competition Form -->
+            <div id="skit-form" class="form-section">
+                <div class="form-instructions">
+                    <h3><i class="fas fa-theater-masks"></i> Skit Competition Registration (ನಾಟಕ ಸ್ಪರ್ಧೆ)</h3>
+                    <ul>
+                        <li>Team registration (5-8 members)</li>
+                        <li>Cultural themes preferred</li>
+                        <li>10-15 minute duration</li>
+                        <li>Script submission for approval</li>
+                        <li>Simple props and costumes allowed</li>
+                    </ul>
+                </div>
+                <iframe 
+                    src="https://docs.google.com/forms/d/e/1FAIpQLSeeMamiqUv2MbbWSbQd5zV_tAwH1k4r2fPW7EkGnv-oIEoPwQ/viewform?embedded=true" 
+                    width="100%" 
+                    height="600" 
+                    frameborder="0" 
+                    marginheight="0" 
+                    marginwidth="0">
+                    Loading Skit Registration Form...
+                </iframe>
+            </div>
+
+            <!-- Essay Writing Form -->
+            <div id="essay-form" class="form-section">
+                <div class="form-instructions">
+                    <h3><i class="fas fa-edit"></i> Essay Writing Competition Registration</h3>
+                    <ul>
+                        <li>Individual competition</li>
+                        <li>Word limit: 500-800 words</li>
+                        <li>Handwritten essays</li>
+                        <li>Topics announced on competition day</li>
+                        <li>No external materials allowed</li>
+                    </ul>
+                </div>
+                <iframe 
+                    src="https://docs.google.com/forms/d/e/1FAIpQLSeeMamiqUv2MbbWSbQd5zV_tAwH1k4r2fPW7EkGnv-oIEoPwQ/viewform?embedded=true" 
+                    width="100%" 
+                    height="600" 
+                    frameborder="0" 
+                    marginheight="0" 
+                    marginwidth="0">
+                    Loading Essay Writing Registration Form...
+                </iframe>
+            </div>
+
+            <!-- Quiz Competition Form -->
+            <div id="quiz-form" class="form-section">
+                <div class="form-instructions">
+                    <h3><i class="fas fa-question-circle"></i> Quiz Competition Registration (ಕ್ವಿಜ್ ಸ್ಪರ್ಧೆ)</h3>
+                    <ul>
+                        <li>Individual or team (2 members)</li>
+                        <li>General Knowledge & Current Affairs</li>
+                        <li>Preliminary written round</li>
+                        <li>Final oral round with buzzer</li>
+                        <li>Preparation materials provided</li>
+                    </ul>
+                </div>
+                <iframe 
+                    src="https://docs.google.com/forms/d/e/1FAIpQLSeeMamiqUv2MbbWSbQd5zV_tAwH1k4r2fPW7EkGnv-oIEoPwQ/viewform?embedded=true" 
+                    width="100%" 
+                    height="600" 
+                    frameborder="0" 
+                    marginheight="0" 
+                    marginwidth="0">
+                    Loading Quiz Registration Form...
+                </iframe>
+            </div>
+
+            <!-- Kavana Vaachana Form -->
+            <div id="kannada-song-form" class="form-section">
+                <div class="form-instructions">
+                    <h3><i class="fas fa-feather-alt"></i> Kavana Vaachana Competition Registration (ಕವನ ವಾಚನ ಸ್ಪರ್ಧೆ)</h3>
+                    <ul>
+                        <li>Solo performance (3-5 minutes)</li>
+                        <li>Self-made Kavana Vaachana mandatory</li>
+                        <li>Original composition only - no published works</li>
+                        <li>Proper Kannada pronunciation required</li>
+                        <li>Creative expression and originality judged</li>
+                    </ul>
+                </div>
+                <iframe 
+                    src="https://docs.google.com/forms/d/e/1FAIpQLSeeMamiqUv2MbbWSbQd5zV_tAwH1k4r2fPW7EkGnv-oIEoPwQ/viewform?embedded=true" 
+                    width="100%" 
+                    height="600" 
+                    frameborder="0" 
+                    marginheight="0" 
+                    marginwidth="0">
+                    Loading Kavana Vaachana Registration Form...
+                </iframe>
+            </div>
+
+            <div style="text-align: center; margin-top: 2rem; padding: 2rem; background: var(--bg-light); border-radius: 15px;">
+                <h3>Need Help with Registration?</h3>
+                <p><i class="fas fa-phone"></i> Student Coordinator: +91 9876543210</p>
+                <p><i class="fas fa-envelope"></i> Email: screening@bvvsangha.edu</p>
+                <p><i class="fas fa-clock"></i> Help Desk: 9:00 AM - 5:00 PM</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showForm(formId) {
+            // Hide all forms
+            document.querySelectorAll('.form-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Remove active class from all buttons
+            document.querySelectorAll('.form-nav-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Show selected form
+            document.getElementById(formId + '-form').classList.add('active');
+            
+            // Add active class to clicked button
+            event.target.classList.add('active');
+            
+            // Scroll to top of form
+            document.querySelector('.form-container').scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    </script>
+</body>
+</html>

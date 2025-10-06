@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Icon Test - BVV Sangha</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 2rem;
+            background: #f5f5f5;
+        }
+        .icon-test {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        .icon-item {
+            background: white;
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .icon-item i {
+            font-size: 2rem;
+            color: #FF6B35;
+            margin-bottom: 0.5rem;
+        }
+        .status {
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            text-align: center;
+            font-weight: bold;
+        }
+        .success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+    </style>
+</head>
+<body>
+    <h1>Font Awesome Icon Test</h1>
+    <p>This page tests if Font Awesome icons are loading correctly.</p>
+    
+    <div id="status" class="status">Checking icons...</div>
+    
+    <div class="icon-test">
+        <div class="icon-item">
+            <i class="fas fa-user-plus"></i>
+            <div>fa-user-plus</div>
+        </div>
+        <div class="icon-item">
+            <i class="fas fa-list"></i>
+            <div>fa-list</div>
+        </div>
+        <div class="icon-item">
+            <i class="fas fa-language"></i>
+            <div>fa-language</div>
+        </div>
+        <div class="icon-item">
+            <i class="fas fa-music"></i>
+            <div>fa-music</div>
+        </div>
+        <div class="icon-item">
+            <i class="fas fa-microphone"></i>
+            <div>fa-microphone</div>
+        </div>
+        <div class="icon-item">
+            <i class="fas fa-pen-fancy"></i>
+            <div>fa-pen-fancy</div>
+        </div>
+        <div class="icon-item">
+            <i class="fas fa-palette"></i>
+            <div>fa-palette</div>
+        </div>
+        <div class="icon-item">
+            <i class="fas fa-theater-masks"></i>
+            <div>fa-theater-masks</div>
+        </div>
+        <div class="icon-item">
+            <i class="fas fa-edit"></i>
+            <div>fa-edit</div>
+        </div>
+        <div class="icon-item">
+            <i class="fas fa-question-circle"></i>
+            <div>fa-question-circle</div>
+        </div>
+        <div class="icon-item">
+            <i class="fas fa-trophy"></i>
+            <div>fa-trophy</div>
+        </div>
+        <div class="icon-item">
+            <i class="fas fa-users"></i>
+            <div>fa-users</div>
+        </div>
+    </div>
+
+    <div style="margin-top: 2rem;">
+        <h3>Alternative Icon Sources (if needed):</h3>
+        <p>1. <strong>jsDelivr CDN:</strong> https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css</p>
+        <p>2. <strong>Font Awesome CDN:</strong> https://use.fontawesome.com/releases/v6.4.0/css/all.css</p>
+        <p>3. <strong>CDNJS:</strong> https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css</p>
+    </div>
+
+    <script>
+        // Test if Font Awesome loaded
+        function testFontAwesome() {
+            const testElement = document.createElement('i');
+            testElement.className = 'fas fa-home';
+            testElement.style.fontFamily = 'Font Awesome 6 Free';
+            testElement.style.position = 'absolute';
+            testElement.style.visibility = 'hidden';
+            document.body.appendChild(testElement);
+            
+            const computedStyle = window.getComputedStyle(testElement);
+            const fontFamily = computedStyle.getPropertyValue('font-family');
+            
+            document.body.removeChild(testElement);
+            
+            const statusDiv = document.getElementById('status');
+            
+            if (fontFamily.includes('Font Awesome')) {
+                statusDiv.className = 'status success';
+                statusDiv.textContent = '✅ Font Awesome is loading correctly!';
+            } else {
+                statusDiv.className = 'status error';
+                statusDiv.innerHTML = '❌ Font Awesome failed to load. Try refreshing or check your internet connection.<br>Font family detected: ' + fontFamily;
+            }
+        }
+        
+        // Wait for fonts to load
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(testFontAwesome, 1000);
+        });
+        
+        // Also test when fonts are ready
+        if (document.fonts) {
+            document.fonts.ready.then(testFontAwesome);
+        }
+    </script>
+</body>
+</html>
