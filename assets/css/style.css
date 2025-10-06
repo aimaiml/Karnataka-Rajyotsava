@@ -206,15 +206,17 @@ body {
 }
 
 .hero-content {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 4rem;
+    display: flex;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
+    text-align: center;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 2rem;
     position: relative;
     z-index: 2;
+    min-height: 80vh;
 }
 
 .hero-title {
@@ -232,14 +234,15 @@ body {
 .hero-subtitle {
     font-size: 2rem;
     font-weight: 600;
-    margin-bottom: 1rem;
+    margin: 1rem 0;
     color: #FFE5D3;
 }
 
 .hero-description {
     font-size: 1.2rem;
-    margin-bottom: 2rem;
+    margin: 2rem 0;
     opacity: 0.9;
+    max-width: 600px;
 }
 
 .progression-flow {
@@ -278,6 +281,7 @@ body {
 
 .cta-buttons {
     display: flex;
+    justify-content: center;
     gap: 1rem;
     margin-top: 2rem;
     flex-wrap: wrap;
@@ -996,8 +1000,9 @@ body {
     }
     
     .hero-content {
-        grid-template-columns: 1fr;
+        padding: 0 1rem;
         text-align: center;
+        min-height: 70vh;
     }
     
     .hero-title {
